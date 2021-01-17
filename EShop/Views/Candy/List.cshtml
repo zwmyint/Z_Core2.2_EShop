@@ -13,7 +13,7 @@
 				<div class="card-body">
 					<h4 class="card-title">@candy.Name</h4>
 					<p class="card-text">@candy.Price.ToString("c")</p>
-					<a href="#" class="btn btn-primary">See Profile</a>
+					<a asp-controller="Candy" asp-action="Details" asp-route-id="@candy.CandyId">See Detail</a>
 				</div>
 					
 			</div>
