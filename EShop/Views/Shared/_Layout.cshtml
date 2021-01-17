@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+	<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+	<script src="~/lib/jquery/dist/jquery.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+	<link href="~/content/site.css" rel="stylesheet" />
+	<title>Candy Shop (EShop)</title>
+</head>
+<body>
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-sm-4">
+				<p class="lead">
+					<img class="img-responsive" src="~/Images/candyshoplogo.png" />
+				</p>
+			</div>
+			<div class="col-sm-8">
+				@RenderBody()
+
+				
+			</div>
+		</div>
+
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿@*@model IEnumerable<EShop.Models.m_cls_Candy>*@
+@model CandyListViewModel
+
+<div>
+	<h1>@Model.CurrentCategory</h1>
+</div>
+<div>
+	<div class="card-columns">
+		@foreach (var candy in Model.Candies)
+		{
+			<div class="card">
+				<img class="card-img-top" src="@candy.ImageThumbnailUrl" alt="image for candy shop" />
+				<div class="card-body">
+					<h4 class="card-title">@candy.Name</h4>
+					<p class="card-text">@candy.Price.ToString("c")</p>
+					<a href="#" class="btn btn-primary">See Profile</a>
+				</div>
+					
+			</div>
+			
+		}
+	</div>
+</div>
