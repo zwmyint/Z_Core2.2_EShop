@@ -18,6 +18,9 @@ namespace EShop.Services
         //
         public DbSet<m_cls_Candy> Candies { get; set; }
         public DbSet<m_cls_Category> Categories { get; set; }
+
+        public DbSet<m_cls_ShoppingCartItem> ShopppingCartItems { get; set; }
+
         //
 
         //

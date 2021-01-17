@@ -34,8 +34,10 @@ namespace EShop
             // added
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICandyRepository, CandyRepository>();
+            services.AddScoped<ShoppingCart>(sc => ShoppingCart.GetCart(sc));
 
-
+            services.AddHttpContextAccessor();
+            services.AddSession();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -64,6 +66,7 @@ namespace EShop
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession(); //added
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>

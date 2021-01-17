@@ -8,16 +8,9 @@
 	<div class="card-columns">
 		@foreach (var candy in Model.Candies)
 		{
-			<div class="card">
-				<img class="card-img-top" src="@candy.ImageThumbnailUrl" alt="image for candy shop" />
-				<div class="card-body">
-					<h4 class="card-title">@candy.Name</h4>
-					<p class="card-text">@candy.Price.ToString("c")</p>
-					<a asp-controller="Candy" asp-action="Details" asp-route-id="@candy.CandyId">See Detail</a>
-				</div>
-					
-			</div>
 			
+			<partial name="_CandyCard" model="candy" />
+
 		}
 	</div>
 </div>
