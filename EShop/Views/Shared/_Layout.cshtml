@@ -52,6 +52,9 @@
 					<li class="nav-item">
 						@await Component.InvokeAsync("ShoppingCartSummary")
 					</li>
+
+					<partial name="_LoginPartial" />
+
 				</ul>
 			</div>
 		</nav>
@@ -70,6 +73,7 @@
 			</div>
 		</div>
 
+		@RenderSection("Scripts", required: false)
 
 	</div>
 </body>

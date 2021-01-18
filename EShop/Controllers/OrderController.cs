@@ -5,10 +5,12 @@ using System.Threading.Tasks;
 using EShop.Models;
 using EShop.Services;
 using EShop.Services.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EShop.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderRepository _orderRepository;

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -31,6 +32,9 @@ namespace EShop
             // added
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DBDefaultConnection")));
 
+            // added for Identity
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+
             // added
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICandyRepository, CandyRepository>();
@@ -47,7 +51,7 @@ namespace EShop
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            //
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -67,7 +71,10 @@ namespace EShop
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
             app.UseSession(); //added
+            app.UseAuthentication(); //added
+            
             app.UseCookiePolicy();
 
             app.UseMvc(routes =>
