@@ -21,6 +21,9 @@ namespace EShop.Services
 
         public DbSet<m_cls_ShoppingCartItem> ShopppingCartItems { get; set; }
 
+        public DbSet<m_cls_Order> Orders { get; set; }
+        public DbSet<m_cls_OrderDetail> OrderDetails { get; set; }
+
         //
 
         //
